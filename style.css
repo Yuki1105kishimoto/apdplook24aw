@@ -1,0 +1,564 @@
+/* style.css – 整理・最終版（コピペでOK） */
+
+/*────────────────────────────────────────────
+  1. Google Fonts 読み込み
+────────────────────────────────────────────*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+/*────────────────────────────────────────────
+  2. リセット
+────────────────────────────────────────────*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*────────────────────────────────────────────
+  3. ベース
+────────────────────────────────────────────*/
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  color: #333;
+}
+
+/*────────────────────────────────────────────
+  4. ヘッダー
+────────────────────────────────────────────*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;           /* 実際のヘッダー高さに合わせて */
+  padding: 16px 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  z-index: 999;
+}
+.site-header .hamburger {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.site-header .logo-img,
+.site-header .logo {
+  display: block;
+  margin: 0 auto;
+}
+.site-header .logo {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+}
+.logo-img {
+  height: 30px;           /* お好みで調整 */
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;    /* ← カーソルが当たった時に手のマーク */
+}
+
+/*────────────────────────────────────────────
+  5. メイン（コンテンツ位置調整）
+────────────────────────────────────────────*/
+.site-main {
+  padding: 56px 16px 16px; /* 上:ヘッダー高 / 左右下:16px */
+}
+.site-main > section {
+  margin-bottom: 120px;
+}
+
+/*────────────────────────────────────────────
+  6. モデル写真
+────────────────────────────────────────────*/
+.model-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*────────────────────────────────────────────
+  7. アイテムリスト
+────────────────────────────────────────────*/
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;              /* モデル写真との隙間ゼロ */
+}
+.item-card {
+  flex: 1;
+  margin: 0;
+}
+.item-card .item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.item-card .item-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;       /* 角丸解除 */
+}
+
+/*────────────────────────────────────────────
+  8. LOOK 詳細
+────────────────────────────────────────────*/
+.look-detail {
+  width: 90%;
+  max-width: 360px;
+  margin: 24px auto 0;
+}
+.look-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.look-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-top: 40px;       /* セクション番号上の余白 */
+}
+.look-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.2ch;
+}
+.look-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.look-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  padding: 8px 0;
+}
+.look-item-name,
+.look-item-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.look-item-price.coming-soon {
+  font-size: 0.8rem;      /* coming soon は小さめ */
+}
+
+/*────────────────────────────────────────────
+  9. セクション4：アイテム2つ横並び
+────────────────────────────────────────────*/
+.section-4 .item-list {
+  display: flex;
+}
+.section-4 .item-card {
+  flex: 1;
+}
+
+/*────────────────────────────────────────────
+  10. セクション5：アイテム4つを2×2グリッド
+────────────────────────────────────────────*/
+.section-5 .item-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.section-5 .item-card {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/*────────────────────────────────────────────
+  11. フッター
+────────────────────────────────────────────*/
+.site-footer {
+  text-align: center;
+  color: #666;
+}
+
+/* ── モデルクレジット部（白背景） ── */
+.footer-model {
+  background: #fff;
+  padding: 100px 16px 100px;  /* 下部余白を広めに */
+}
+.footer-model .model-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.footer-model .model-brand {
+  font-size: 0.7rem;
+  margin-bottom: 4px;
+}
+.footer-model .model-title {
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+.footer-model .model-instagram {
+  margin-top: 4px;
+}
+.footer-model .model-instagram a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: inherit;
+}
+.instagram-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ── メインフッター部（黒背景） ── */
+.footer-main {
+  background: #000;
+  padding: 48px 16px 32px;
+}
+.footer-main .footer-tagline {
+  font-size: 0.7rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+  margin-top: 64px;       /* 上部余白 */
+  margin-bottom: 19px;
+}
+.footer-main .footer-logo {
+  display: block;
+  margin: 0 auto 14px;
+  height: 64px;           /* ２倍サイズ */
+  width: auto;
+}
+.footer-main .footer-all {
+  margin-bottom: 94px;
+}
+.footer-main .footer-all .footer-link {
+  font-size: 0.7rem;      /* 小さめに */
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-main .footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 52px;
+}
+.footer-main .footer-nav li {
+  margin-bottom: 16px;
+}
+.footer-main .footer-nav li a {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-main .footer-copy {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/*────────────────────────────────────────────
+ 12. フッター日本語フォントを游ゴシックに強制
+────────────────────────────────────────────*/
+.site-footer,
+.site-footer * {
+  font-family:
+    '游ゴシック','YuGothic','Yu Gothic',
+    'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN',
+    'Meiryo','メイリオ',
+    sans-serif !important;
+}
+
+/* ────────────────────────────────────────────
+   ハンバーガーメニュー（全画面オーバーレイ）
+────────────────────────────────────────────*/
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #d3d3d3;      /* ラフと同じグレー */
+  padding: 16px;
+  overflow-y: auto;
+  z-index: 10000;
+  transform: translateX(-100%); /* 初期は隠す */
+  transition: transform 0.3s ease;
+}
+.hamburger-menu.open {
+  transform: translateX(0);
+}
+
+/* クローズボタン */
+.hamburger-menu .menu-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/* 共通見出し */
+.menu-section h2 {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin: 24px 0;
+}
+
+/* ── ARCHIVE ── */
+.archive ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.archive li {
+  margin-bottom: 32px;
+  text-align: center;
+}
+.archive img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.archive span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.7rem;
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ── LOOK BOOK / BRAND LIST ── */
+.lookbook ul,
+.brandlist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lookbook li,
+.brandlist li {
+  margin-bottom: 16px;
+  text-align: center;
+}
+.lookbook a,
+.brandlist a {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* 最後の li の余白を調整 */
+.menu-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* ── SHOP TOP ── */
+.shoptop .shop-top {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: #000;
+  margin: 32px 0;
+}
+
+/* SHOP TOP をセクションタイトルと同じ太さに */
+.shoptop .shop-top {
+  font-weight: bold;        /* セクションタイトル(h2)と同じ太さに */
+  letter-spacing: 0.1em;    /* セクションタイトルと同じ字間 */
+}
+
+
+/* スクロールバー（必要に応じて） */
+.hamburger-menu::-webkit-scrollbar {
+  width: 8px;
+}
+.hamburger-menu::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+/* ハンバーガーメニュー内 セクション間の余白を広く */
+.hamburger-menu .menu-section {
+  margin-bottom: 100px; /* 好きな数値で調整 */
+}
+/* 最後のセクションだけ余白をリセット */
+.hamburger-menu .menu-section:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* ────────────────────────────────────────────
+   ページトップへ戻るボタン
+────────────────────────────────────────────*/
+
+#back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  /* 半透明に */
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  /* 初期は隠しておく */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+  /* フェードをゆっくりふわっと */
+  transition: opacity 0.8s ease;
+  z-index: 1000;
+}
+
+/* ページを一定量スクロールしたら出現 */
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ホバー時は少し濃く */
+#back-to-top:hover {
+ background: rgba(0, 0, 0, 0.7);
+}
+
+
+
+/* ──────────── PC専用レイアウト (1024px以上) ──────────── */
+@media screen and (min-width: 1024px) {
+  /* １. 各セクションごとの「画像⇔テキスト間隔」を設定 */
+  .section-1 { --img-text-gap: 74px; }  /* LOOK01 の間隔 */
+  .section-2 { --img-text-gap: 70px; }  /* LOOK02 の間隔 */
+  .section-3 { --img-text-gap: 76px; }  /* LOOK03 の間隔 */
+  .section-4 { --img-text-gap: 82px; }  /* LOOK04 の間隔 */
+  .section-5 { --img-text-gap: 40px; }  /* LOOK05 の間隔 */
+
+  /* ２. section-content: 画像＋テキストを一塊にして中央に配置 */
+  .section-content {
+    display: inline-flex;           /* 子要素を横並びのインラインFlexに */
+    flex-wrap: nowrap;              /* 折り返し禁止で2段にならない */
+    align-items: center;            /* 縦方向中心を揃える */
+    justify-content: center;        /* 横方向も中央寄せ */
+    gap: var(--img-text-gap,16px);  /* ①で定義した間隔 or デフォルト16px */
+    margin: 48px auto 120px;        /* 上32px・左右auto(中央)・下120px(セクション間) */
+    white-space: nowrap;            /* インライン要素の改行も禁止 */
+  }
+
+  /* ３. item-list: 画像をさらに横並び＆隙間ゼロ */
+  .section-content .item-list {
+    display: flex;
+    flex-wrap: nowrap; /* 折り返し禁止 */
+    gap: 0;            /* 画像同士に隙間をつくらない */
+  }
+
+  /* ４. item-card: デフォルトマージンをリセット */
+  .section-content .item-card {
+    margin: 0;
+    flex: 0 0 auto;   /* 画像幅に合わせて変動 */
+  }
+
+  /* ５. item-photo: 画像サイズを統一 */
+  .section-content .item-photo {
+    width: 200px;     /* 全セクションで横幅200pxに */
+    height: auto;
+    display: block;
+    border-radius: 0; /* 角丸解除 */
+  }
+
+  /* ６. look-detail: テキストブロックをインラインで表示 */
+  .section-content .look-detail {
+    margin: 0;        /* モバイル余白リセット */
+    /* 幅は内容に応じて自動調整されます */
+  }
+
+  /* ７. セクション５だけの特別対応は不要。
+        画像幅200px × 4列で自動的に横並びになります。 */
+
+        
+  /* 各セクション内を中央寄せするために、
+     section をテキストセンターに */
+  .site-main > section {
+    text-align: center;
+  }
+
+  /* section-content を inline-flex にして、
+     コンテナ幅を中身にフィットさせつつ中央寄せ */
+  .section-content {
+    display: inline-flex;       /* ブロックではなくインラインフレックスに */
+    align-items: center;        /* 子要素を縦方向中央揃え */
+    gap: var(--img-text-gap, 16px);
+    margin: 32px auto 120px;    /* 上32px／左右自動／下120px */
+  }
+
+  /* モデル写真とアイテム＋テキスト間の余白を広げる */
+  .section-content {
+    margin-top: 78px !important;
+  }
+
+  /* PC版でのみ coming soon を小さく */
+  .look-item-price.coming-soon {
+    font-size: 0.5rem; /* お好みのサイズに調整 */
+  }
+
+  /* 1. 各行をフレックスにして左右に振り分け */
+  .look-list li {
+    display: flex;                 /* 横並び */
+    justify-content: space-between;/* 左右端に配置 */
+    align-items: center;           /* 縦方向センター */
+  }
+
+  /* 2. アイテム名は折り返さず、右マージンを確保 */
+  .look-item-name {
+    white-space: nowrap;           /* テキスト折り返し禁止 */
+    margin-right: 16px;            /* 名前と価格のあいだの隙間 */
+    flex-shrink: 0;                /* 縮まない */
+  }
+
+  /* 3. 価格も折り返し禁止＆縮まない */
+  .look-item-price {
+    white-space: nowrap;
+    flex-shrink: 0;                /* 名前の長さにかかわらず位置を固定 */
+  }
+}
+
+
+
+
+
+
+/* フェードアップ用 初期状態 */
+.fade-up {
+  opacity: 0;                   
+  transform: translateY(20px);  
+  transition: 
+    opacity 1s ease-out,        /* 1秒でゆったりフェード */
+    transform 1s ease-out;      /* 1秒でゆったり浮かび上がり */
+}
+
+/* フェードアップ表示状態 */
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
